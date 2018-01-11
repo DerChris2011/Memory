@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void Start_4x4(View view)
     {
         //Öffnen der 4x4 Activity
-        Intent i = new Intent(this, Game_4x4.class);
+        Intent i = new Intent(this, PictureSelector_2x4.class);
         startActivity(i);
     }
 

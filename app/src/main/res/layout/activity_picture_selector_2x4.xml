@@ -4,22 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.cvd.memory10.Game_4x4">
+    tools:context="com.project.cvd.memory10.PictureSelector_2x4">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_Start"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="0"
-            android:text="@string/StartGame" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +20,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -63,7 +53,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="5"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -96,6 +86,16 @@
                     android:onClick="Open_1"
                     app:srcCompat="@android:color/background_light" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/StartGame"
+                tools:layout_editor_absoluteX="20dp" />
+
         </LinearLayout>
 
     </LinearLayout>
