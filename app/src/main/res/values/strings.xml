@@ -8,4 +8,5 @@
     <string name="Hardcore">Hardcore</string>
     <string name="logo">logo_placeholder</string>
     <string name="music_bool">Music on/off</string>
+    <string name="StartGame">Start Game</string>
 </resources>
