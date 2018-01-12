@@ -54,12 +54,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void Start_6x6(View view)
     {
-        //Todo: Hier bitte die 6x6 Activity öffnen.
+        //öffnen der 2x5 Activity
+        Intent i= new Intent( this, PictureSelector_3x4.class);
+        startActivity(i);
     }
 
     public void Start_8x8(View view)
     {
-        //Todo: Hier bitte die 8x8 Activity öffnen.
+        //öffnen der 2x5 Activity
+        Intent i= new Intent( this, PictureSelector_Hardcore.class);
+        startActivity(i);
     }
 
     //Checkbox Events
