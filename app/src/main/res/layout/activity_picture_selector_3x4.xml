@@ -6,4 +6,140 @@
     android:layout_height="match_parent"
     tools:context="com.project.cvd.memory10.PictureSelector_3x4">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="0"
+                    android:layout_weight="1"
+                    android:contentDescription="h1"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+
+                <ImageView
+                    android:id="@+id/imgView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="1"
+                    android:layout_weight="1"
+                    android:contentDescription="h2"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:contentDescription="h4"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+
+                <ImageView
+                    android:id="@+id/imgView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:contentDescription="h3"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="0"
+                    android:layout_weight="1"
+                    android:contentDescription="h1"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+
+                <ImageView
+                    android:id="@+id/imgView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="1"
+                    android:layout_weight="1"
+                    android:contentDescription="h2"
+                    android:onClick="Open_1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:color/background_light" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/StartGame"
+                tools:layout_editor_absoluteX="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
