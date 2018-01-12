@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         cb_sound = findViewById(R.id.cb_sound);
         cb_music = findViewById(R.id.cb_music);
-
-
     }
 
     //Button Events
@@ -49,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void Start_5x5(View view)
     {
-        //Todo: Hier bitte die 5x5 Activity öffnen.
+        //öffnen der 2x5 Activity
+        Intent i= new Intent( this, PictureSelector_2x5.class);
+        startActivity(i);
     }
 
     public void Start_6x6(View view)

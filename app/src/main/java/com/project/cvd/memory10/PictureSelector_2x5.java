@@ -129,4 +129,19 @@ public class PictureSelector_2x5 extends AppCompatActivity {
         }
     }
 
+    //Prüft ob ausgewähltes Bild schon vorher ausgewählt wurde.
+    private boolean CheckIfPictureIsSelected(Uri _uri)
+    {
+        //In dieser Schleife wird die Liste mit den schon zugefügten Bildern durchlaufen.
+        for (int i=0; i<checkList.size();i++)
+        {
+            //Abfrage ob das aktuell ausgewählte Bild gleich dem ist wo gerade die Schleife steht.
+            if(_uri.equals(checkList.get(i)))
+            {
+                //Wenn Bild schon vorhanden gibt er true zurück und beendet damit sofort die Methode.
+                return true;
+            }
+        }
+        return false;
+    }
 }

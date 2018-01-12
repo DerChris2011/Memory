@@ -29,15 +29,15 @@ public class PictureSelector_3x4 extends AppCompatActivity {
     //Deklaration des Start Buttons
     private Button btn_start;
 
-    private static int IMG_RESULT = 1;
+    private static int imgResult = 1;
 
     //Liste in die alle Bilder geschrieben werden.
     private List<Bitmap> pictureList = new ArrayList<>();
     private List<Uri> checkList = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_selector_3x4);
 
         img_1=findViewById(R.id.imgView1);
@@ -58,9 +58,7 @@ public class PictureSelector_3x4 extends AppCompatActivity {
     {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, IMG_RESULT);
-
-
+        startActivityForResult(photoPickerIntent, imgResult);
     }
 
     //Sobald ein Bild ausgewählt wurde wird es in dieser Methode abgefangen und in den entsprechenden ImageView sowie in die Liste geschrieben.
@@ -68,7 +66,7 @@ public class PictureSelector_3x4 extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
-            if (requestCode == IMG_RESULT && resultCode == RESULT_OK && data != null && data.getData() != null)
+            if (requestCode == imgResult && resultCode == RESULT_OK && data != null && data.getData() != null)
             {
                 Uri uri = data.getData();
 
@@ -109,9 +107,6 @@ public class PictureSelector_3x4 extends AppCompatActivity {
                             img_5.setImageBitmap(pictureList.get(pictureList.size()-1));
                             img_5.setBackgroundColor(Color.TRANSPARENT);
                             img_5.setMaxHeight(img_5.getWidth());
-
-
-
                         }
                         else if (pictureList.size() ==6)
                         {
@@ -119,11 +114,9 @@ public class PictureSelector_3x4 extends AppCompatActivity {
                             img_6.setBackgroundColor(Color.TRANSPARENT);
                             img_6.setMaxHeight(img_6.getWidth());
 
-
                             //Button aktivieren.
                             btn_start.setEnabled(true);
                         }
-
                     } catch (IOException e) {
                         e.printStackTrace();
                         Toast.makeText(this, R.string.try_again, Toast.LENGTH_LONG).show();
