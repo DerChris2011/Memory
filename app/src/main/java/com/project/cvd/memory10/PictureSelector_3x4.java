@@ -150,6 +150,5 @@ public class PictureSelector_3x4 extends AppCompatActivity {
         }
         return false;
     }
-
 }
 

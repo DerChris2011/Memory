@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Memory.iml" filepath="$PROJECT_DIR$/Memory.iml" />
       <module fileurl="file://C:\Users\Heero\Desktop\Memory10\Memory.iml" filepath="C:\Users\Heero\Desktop\Memory10\Memory.iml" />
       <module fileurl="file://$PROJECT_DIR$/Memory10.iml" filepath="$PROJECT_DIR$/Memory10.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
