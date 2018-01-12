@@ -17,7 +17,7 @@
         <activity android:name=".PictureSelector_2x5"
             android:configChanges = "orientation"
             android:screenOrientation = "portrait"/>
-        <activity android:name=".Game_6x6"
+        <activity android:name=".PictureSelector_3x4"
             android:configChanges = "orientation"
             android:screenOrientation = "portrait"/>
         <activity android:name=".Game_8x8"

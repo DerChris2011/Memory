@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.cvd.memory10.Game_6x6">
+    tools:context="com.project.cvd.memory10.PictureSelector_3x4">
 
 </android.support.constraint.ConstraintLayout>
