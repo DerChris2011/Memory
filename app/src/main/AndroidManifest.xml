@@ -13,19 +13,19 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".PictureSelector_2x4"
             android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation = "landscape"/>
         <activity android:name=".PictureSelector_2x5"
             android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation = "landscape"/>
         <activity android:name=".PictureSelector_3x4"
             android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation = "landscape"/>
         <activity android:name=".PictureSelector_Hardcore"
             android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation = "landscape"/>
         <activity android:name=".MainActivity"
             android:configChanges = "orientation"
-            android:screenOrientation = "portrait">
+            android:screenOrientation = "landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
