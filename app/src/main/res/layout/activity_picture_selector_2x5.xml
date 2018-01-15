@@ -44,8 +44,8 @@
                     android:layout_weight="1"
                     android:contentDescription="h1"
                     android:onClick="Open_1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@android:color/background_light" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/memory_hinten" />
 
                 <ImageView
                     android:id="@+id/imgView2"
@@ -60,8 +60,8 @@
                     android:layout_weight="1"
                     android:contentDescription="h2"
                     android:onClick="Open_1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@android:color/background_light" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/memory_hinten" />
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -93,8 +93,8 @@
                     android:layout_weight="2.4"
                     android:contentDescription="h4"
                     android:onClick="Open_1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@android:color/background_light" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/memory_hinten" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -129,8 +129,8 @@
                     android:layout_weight="1"
                     android:contentDescription="h1"
                     android:onClick="Open_1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@android:color/background_light" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/memory_hinten" />
 
                 <ImageView
                     android:id="@+id/imgView5"
@@ -145,8 +145,8 @@
                     android:layout_weight="1"
                     android:contentDescription="h2"
                     android:onClick="Open_1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@android:color/background_light" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/memory_hinten" />
 
                 <ImageView
                     android:id="@+id/imageView5"

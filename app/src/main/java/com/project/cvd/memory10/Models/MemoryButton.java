@@ -27,7 +27,7 @@ public class MemoryButton extends ImageButton  {
     public MemoryButton(Context _context, Bitmap _front, int _triggerId, int _pictureId){
         super(_context);
         this.front = _front;
-        this.back = BitmapFactory.decodeResource(getResources(), R.drawable.question);
+        this.back = BitmapFactory.decodeResource(getResources(), R.drawable.memory_vorne);
         this.style = getResources().getDrawable(R.drawable.game_images);
         this.triggerId = _triggerId;
         this.pictureId = _pictureId;
