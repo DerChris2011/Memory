@@ -31,6 +31,7 @@ public class MemoryButton extends ImageButton  {
         this.style = getResources().getDrawable(R.drawable.game_images);
         this.triggerId = _triggerId;
         this.pictureId = _pictureId;
+
         setImageBitmap(back);
         setBackground(style);
         setScaleType(ScaleType.CENTER_CROP);
