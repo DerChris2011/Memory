@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.project.cvd.memory10.GameScreen">
 
     <GridLayout
@@ -11,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
-        android:elevation="0dp"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="15dp">
+        android:foregroundGravity="center_vertical|fill_vertical|center_horizontal|fill_horizontal"
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintStart_toEndOf="parent">
 
     </GridLayout>
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.project.cvd.memory10.MainActivity">
 
     <LinearLayout
@@ -22,6 +23,9 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="0.5"
+            android:requiresFadingEdge="none"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"
             app:srcCompat="@drawable/logo" />
 
         <LinearLayout
@@ -107,16 +111,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="fill_vertical"
                 android:onClick="ChangeSound"
                 android:text="@string/sound_bool" />
-
-            <CheckBox
-                android:id="@+id/cb_music"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="ChangeMusic"
-                android:text="@string/music_bool" />
 
         </LinearLayout>
 

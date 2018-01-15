@@ -13,11 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Declaration CheckBox
     private CheckBox cb_sound;
-    private CheckBox cb_music;
-
-    //Declaraition for Options
-    private boolean sound=false;
-    private boolean music = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cb_sound = findViewById(R.id.cb_sound);
-        cb_music = findViewById(R.id.cb_music);
     }
 
     @Override
