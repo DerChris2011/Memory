@@ -9,10 +9,10 @@ import android.widget.ImageButton;
 import com.project.cvd.memory10.R;
 
 /**
- * Created by Heero on 12.01.2018.
+ * Created by Christoph Fandrich on 12.01.2018.
  */
 
-public class MemoryButton extends ImageButton {
+public class MemoryButton extends ImageButton  {
 
     protected boolean isFlipped;
     protected boolean isMatched;
@@ -23,7 +23,6 @@ public class MemoryButton extends ImageButton {
 
     protected int triggerId;
     protected int pictureId;
-
 
     public MemoryButton(Context _context, Bitmap _front, int _triggerId, int _pictureId){
         super(_context);
@@ -37,24 +36,12 @@ public class MemoryButton extends ImageButton {
         setScaleType(ScaleType.CENTER_CROP);
     }
 
-    public int getTriggerId() {
-        return triggerId;
-    }
-
     public int getPictureId() {
         return pictureId;
     }
 
-    public boolean isMatched(){
-        return isMatched;
-    }
-
     public void setMatched(boolean matched){
         this.isMatched = matched;
-    }
-
-    public Bitmap getFront() {
-        return front;
     }
 
     public void Flip(){
@@ -74,6 +61,4 @@ public class MemoryButton extends ImageButton {
             isFlipped = true;
         }
     }
-
-
 }

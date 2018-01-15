@@ -14,4 +14,6 @@ public class LogicHelper {
 
     //Globale Liste mit ausgewählten Bitmaps, Zugriff von jeder View möglich.
     public static List<Bitmap> bitmapList = new ArrayList<>();
+
+    public static boolean Sound = false;
 }

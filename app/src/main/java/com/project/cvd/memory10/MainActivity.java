@@ -19,11 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private boolean sound=false;
     private boolean music = false;
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,21 +58,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i4);
     }
 
-    private void MakeSound(){
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.sound_button);
-        mp.start();
-    }
-
     //Checkbox Events
     public void ChangeSound(View view)
     {
-        sound = cb_sound.isChecked();
-        MakeSound();
-    }
-
-    public void ChangeMusic(View view)
-    {
-        music = cb_music.isChecked();
+        LogicHelper.Sound = cb_sound.isChecked();
     }
 
 

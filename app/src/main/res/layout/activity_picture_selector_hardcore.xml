@@ -130,6 +130,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/StartGame"
+                android:textSize="18dp"
+                android:textColor="@android:color/background_dark"
+                android:background="@drawable/btn"
                 tools:layout_editor_absoluteX="20dp" />
 
         </LinearLayout>

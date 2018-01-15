@@ -1,25 +1,31 @@
 package com.project.cvd.memory10.Logic;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import com.project.cvd.memory10.R;
 
 /**
- * Created by Heero on 11.01.2018.
+ * Created by Sinan Akpinar on 11.01.2018.
+ * In dieser Klasse werden die einzelnen Sounds abgespielt.
  */
 
-public class PlaySound
-{
-    private boolean ON = false;
+public class PlaySound{
 
-    public PlaySound(boolean ON)
+    public static void PlayClick(Context context)
     {
-        this.ON = ON;
+        if(LogicHelper.Sound)
+        {
+            MediaPlayer mp = MediaPlayer.create(context, R.raw.sound_button);
+            mp.start();
+        }
     }
 
-    public void PlayClick()
+    public static void PlayFail(Context context)
     {
-        if(ON)
+        if(LogicHelper.Sound)
         {
-            //Play Sound
+            MediaPlayer mp = MediaPlayer.create(context, R.raw.fail);
+            mp.start();
         }
     }
 }
