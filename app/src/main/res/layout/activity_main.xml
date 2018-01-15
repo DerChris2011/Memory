@@ -19,57 +19,62 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:contentDescription="@string/logo"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_easy"
+            <Button
+                android:id="@+id/btn_easy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="Start_Easy"
+                android:text="@string/Easy" />
+
+            <Button
+                android:id="@+id/btn_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="Start_Medium"
+                android:text="@string/Medium" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.4"
-            android:onClick="Start_4x4"
-            android:text="@string/Easy" />
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_medium"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.4"
-            android:onClick="Start_5x5"
-            android:text="@string/Medium" />
+            <Button
+                android:id="@+id/btn_hard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="Start_Hard"
+                android:text="@string/Hard" />
 
-        <Button
-            android:id="@+id/btn_hard"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.4"
-            android:onClick="Start_6x6"
-            android:text="@string/Hard" />
+            <Button
+                android:id="@+id/btn_hardcore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="Start_Hardcore"
+                android:text="@string/Hardcore" />
 
-        <Button
-            android:id="@+id/btn_hardcore"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.4"
-            android:onClick="Start_8x8"
-            android:text="@string/Hardcore" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/cb_holder"
@@ -78,7 +83,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_weight="0"
+            android:gravity="bottom"
             android:orientation="horizontal">
 
             <CheckBox
@@ -96,6 +101,7 @@
                 android:layout_weight="1"
                 android:onClick="ChangeMusic"
                 android:text="@string/music_bool" />
+
         </LinearLayout>
 
     </LinearLayout>

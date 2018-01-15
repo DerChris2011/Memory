@@ -10,6 +10,7 @@
       <w>ausgegeben</w>
       <w>ausgewählt</w>
       <w>ausgewählte</w>
+      <w>ausgewählten</w>
       <w>ausgewähltes</w>
       <w>beendet</w>
       <w>beim</w>
@@ -17,8 +18,11 @@
       <w>bilder</w>
       <w>bildern</w>
       <w>damit</w>
+      <w>daten</w>
+      <w>declaraition</w>
       <w>deklaration</w>
       <w>dieser</w>
+      <w>drehen</w>
       <w>durchlaufen</w>
       <w>einem</w>
       <w>entsprechenden</w>
@@ -28,17 +32,26 @@
       <w>geschrieben</w>
       <w>gibt</w>
       <w>gleich</w>
+      <w>globale</w>
       <w>hier</w>
       <w>inaktiv</w>
       <w>initialisierung</w>
+      <w>jeder</w>
+      <w>karte</w>
+      <w>klasse</w>
       <w>liste</w>
       <w>methode</w>
+      <w>möglich</w>
+      <w>nicht</w>
       <w>prüft</w>
       <w>schleife</w>
       <w>schon</w>
       <w>sein</w>
       <w>selektierten</w>
       <w>setzen</w>
+      <w>setzten</w>
+      <w>shuffel</w>
+      <w>sind</w>
       <w>sobald</w>
       <w>sofort</w>
       <w>sollte</w>
@@ -51,7 +64,10 @@
       <w>wird</w>
       <w>wurde</w>
       <w>zugefügten</w>
+      <w>zugriff</w>
       <w>zurück</w>
+      <w>zwischenspeichern</w>
+      <w>übergeben</w>
     </words>
   </dictionary>
 </component>

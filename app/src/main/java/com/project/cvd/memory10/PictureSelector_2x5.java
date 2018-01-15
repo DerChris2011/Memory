@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.project.cvd.memory10.Logic.LogicHelper;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -143,5 +145,13 @@ public class PictureSelector_2x5 extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    public void StartGame(View view) {
+        Intent start = new Intent(this, GameScreen.class);
+        startActivity(start);
+
+        LogicHelper.bitmapList=new ArrayList<>();
+        LogicHelper.bitmapList = pictureList;
     }
 }
