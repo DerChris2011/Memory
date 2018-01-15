@@ -2,41 +2,31 @@ package com.project.cvd.memory10;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.project.cvd.memory10.Logic.LogicHelper;
 import com.project.cvd.memory10.Models.MemoryButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class GameScreen extends AppCompatActivity implements View.OnClickListener {
 
-
-    private int numberOfElements;
-    private MemoryButton[] buttons;
-    private int[] buttonGraphicLocations;
-    private int[] buttonGraphics;
-
     private MemoryButton selectedButton1;
     private MemoryButton selectedButton2;
 
-    private boolean isBusy = false;
+    private List<MemoryButton> memoryButtonList = new ArrayList<>();
 
     private int matchingAll=0;
 
-    private List<Bitmap> GamePicture;
+    private GridLayout gameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +36,14 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         int numColumns=0;
         int numRows=0;
 
+        //TableLayout zuweisen
+        gameLayout = findViewById(R.id.GameGrid);
+
         if(LogicHelper.bitmapList==null){
             Toast.makeText(this, "Liste leer", Toast.LENGTH_SHORT).show();
         }
 
-        GridLayout gridLayout = findViewById(R.id.GameGrid);
-
+        //Abfrage um welche Anzahl von Karten es sich handelt.
         if(LogicHelper.bitmapList.size()==4)
         {
             numColumns = 4;
@@ -68,31 +60,35 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
             numRows = 3;
         }
 
-        gridLayout.setColumnCount(numColumns);
-        gridLayout.setRowCount(numRows);
+        //Setzen des GameLayouts
+        gameLayout.setColumnCount(numColumns);
+        gameLayout.setRowCount(numRows);
 
-        numberOfElements = numColumns * numRows;
+        //Methodenaufruf um die Karten zuzuorden.
+        ShuffelButtonGraphics();
 
-        buttons = new MemoryButton[numberOfElements];
-
-        buttonGraphics = new int[numberOfElements / 2];
-
-        ShuffelButtonGraphics(gridLayout);
     }
 
-    private void ShuffelButtonGraphics(GridLayout gl){
+    private void ShuffelButtonGraphics(){
 
         int trigger = -1;
         for (int i = 0;i<LogicHelper.bitmapList.size();i++)
         {
             trigger++;
-            gl.addView(CreateButtonView(LogicHelper.bitmapList.get(i),trigger,i));
+            memoryButtonList.add(CreateButtonView(LogicHelper.bitmapList.get(i), trigger, i));
         }
-
         for (int i = 0;i<LogicHelper.bitmapList.size();i++)
         {
             trigger++;
-            gl.addView(CreateButtonView(LogicHelper.bitmapList.get(i),trigger,i));
+            memoryButtonList.add(CreateButtonView(LogicHelper.bitmapList.get(i), trigger, i));
+        }
+
+        //Shuffeln der ButtonList
+        Collections.shuffle(memoryButtonList);
+
+        for (int i=0; i<memoryButtonList.size(); i++)
+        {
+            gameLayout.addView(memoryButtonList.get(i));
         }
     }
 
@@ -101,9 +97,24 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         btn.setOnClickListener(this);
 
         GridLayout.LayoutParams tempParams = new GridLayout.LayoutParams();
-        tempParams.width = (int) getResources().getDisplayMetrics().density*100;
-        tempParams.height = (int) getResources().getDisplayMetrics().density*100;
-        btn.setMinHeight(tempParams.width);
+        if(LogicHelper.bitmapList.size()==4)
+        {
+            tempParams.width = (int) getResources().getDisplayMetrics().density*140;
+            tempParams.height = (int) getResources().getDisplayMetrics().density*140;
+        }
+        else if(LogicHelper.bitmapList.size()==5)
+        {
+            tempParams.width = (int) getResources().getDisplayMetrics().density*110;
+            tempParams.height = (int) getResources().getDisplayMetrics().density*110;
+        }
+        else if(LogicHelper.bitmapList.size()==6)
+        {
+            tempParams.width = (int) getResources().getDisplayMetrics().density*90;
+            tempParams.height = (int) getResources().getDisplayMetrics().density*90;
+
+        }
+
+
         tempParams.leftMargin=15;
         tempParams.rightMargin=15;
         tempParams.topMargin=15;
@@ -131,6 +142,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
             selectedButton2 = m;
             selectedButton2.Flip();
 
+            //
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

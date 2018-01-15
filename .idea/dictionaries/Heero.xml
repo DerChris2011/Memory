@@ -6,6 +6,7 @@
       <w>aktivieren</w>
       <w>aktuell</w>
       <w>alle</w>
+      <w>anzahl</w>
       <w>aufgerufen</w>
       <w>ausgegeben</w>
       <w>ausgewählt</w>
@@ -33,14 +34,18 @@
       <w>gibt</w>
       <w>gleich</w>
       <w>globale</w>
+      <w>handelt</w>
       <w>hier</w>
       <w>inaktiv</w>
       <w>initialisierung</w>
       <w>jeder</w>
       <w>karte</w>
+      <w>karten</w>
       <w>klasse</w>
       <w>liste</w>
       <w>methode</w>
+      <w>methoden</w>
+      <w>methodenaufruf</w>
       <w>möglich</w>
       <w>nicht</w>
       <w>prüft</w>
@@ -51,6 +56,7 @@
       <w>setzen</w>
       <w>setzten</w>
       <w>shuffel</w>
+      <w>sich</w>
       <w>sind</w>
       <w>sobald</w>
       <w>sofort</w>
@@ -59,6 +65,7 @@
       <w>steht</w>
       <w>vorhanden</w>
       <w>vorher</w>
+      <w>welche</w>
       <w>wenn</w>
       <w>werden</w>
       <w>wird</w>
@@ -66,6 +73,8 @@
       <w>zugefügten</w>
       <w>zugriff</w>
       <w>zurück</w>
+      <w>zuweisen</w>
+      <w>zuzuorden</w>
       <w>zwischenspeichern</w>
       <w>übergeben</w>
     </words>

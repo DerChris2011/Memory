@@ -3,9 +3,8 @@ package com.project.cvd.memory10.Models;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.widget.Button;
-import android.widget.GridLayout;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageButton;
 
 import com.project.cvd.memory10.R;
 
@@ -13,13 +12,14 @@ import com.project.cvd.memory10.R;
  * Created by Heero on 12.01.2018.
  */
 
-public class MemoryButton extends android.support.v7.widget.AppCompatButton {
+public class MemoryButton extends ImageButton {
 
     protected boolean isFlipped;
     protected boolean isMatched;
 
     protected Bitmap front;
     protected Bitmap back;
+    protected Drawable style;
 
     protected int triggerId;
     protected int pictureId;
@@ -29,10 +29,12 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
         super(_context);
         this.front = _front;
         this.back = BitmapFactory.decodeResource(getResources(), R.drawable.question);
+        this.style = getResources().getDrawable(R.drawable.game_images);
         this.triggerId = _triggerId;
         this.pictureId = _pictureId;
-
-        setBackground(new BitmapDrawable(back));
+        setImageBitmap(back);
+        setBackground(style);
+        setScaleType(ScaleType.CENTER_CROP);
     }
 
     public int getTriggerId() {
@@ -61,12 +63,14 @@ public class MemoryButton extends android.support.v7.widget.AppCompatButton {
         }
 
         if(isFlipped){
-            setBackground(new BitmapDrawable(back));
+            setImageBitmap(back);
+            setBackground(style);
             isFlipped = false;
         }
         else
         {
-            setBackground(new BitmapDrawable(front));
+            setImageBitmap(front);
+            setBackground(style);
             isFlipped = true;
         }
     }

@@ -36,17 +36,25 @@
                 android:id="@+id/btn_easy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:onClick="Start_Easy"
-                android:text="@string/Easy" />
+                android:text="@string/Easy"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_medium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:onClick="Start_Medium"
-                android:text="@string/Medium" />
+                android:text="@string/Medium"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -62,17 +70,25 @@
                 android:id="@+id/btn_hard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:onClick="Start_Hard"
-                android:text="@string/Hard" />
+                android:text="@string/Hard"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_hardcore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/btn"
                 android:onClick="Start_Hardcore"
-                android:text="@string/Hardcore" />
+                android:text="@string/Hardcore"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
