@@ -11,4 +11,6 @@
     <string name="StartGame">Start Game</string>
     <string name="try_again">Please try again.</string>
     <string name="already_selected_picture">Picture is already selected, please choose another one.</string>
+    <string name="next">Next</string>
+    <string name="your_time">Your time:</string>
 </resources>

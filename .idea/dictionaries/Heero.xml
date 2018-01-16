@@ -3,6 +3,9 @@
     <words>
       <w>abfrage</w>
       <w>abgefangen</w>
+      <w>abgespielt</w>
+      <w>abholen</w>
+      <w>akpinar</w>
       <w>aktivieren</w>
       <w>aktuell</w>
       <w>alle</w>
@@ -29,8 +32,11 @@
       <w>durchlaufen</w>
       <w>einem</w>
       <w>eins</w>
+      <w>einstellung</w>
+      <w>einzelnen</w>
       <w>entsprechende</w>
       <w>entsprechenden</w>
+      <w>erzeugen</w>
       <w>fehler</w>
       <w>festlegen</w>
       <w>gekommen</w>
@@ -48,9 +54,12 @@
       <w>karten</w>
       <w>klasse</w>
       <w>liste</w>
+      <w>läuft</w>
       <w>methode</w>
       <w>methoden</w>
       <w>methodenaufruf</w>
+      <w>mins</w>
+      <w>mitgeschickte</w>
       <w>möglich</w>
       <w>nicht</w>
       <w>noch</w>
@@ -62,7 +71,9 @@
       <w>setzen</w>
       <w>setzten</w>
       <w>shuffel</w>
+      <w>shuffeln</w>
       <w>sich</w>
+      <w>sinan</w>
       <w>sind</w>
       <w>sobald</w>
       <w>sofort</w>
@@ -71,6 +82,7 @@
       <w>spielart</w>
       <w>starten</w>
       <w>steht</w>
+      <w>verteilen</w>
       <w>vorhanden</w>
       <w>vorher</w>
       <w>welche</w>
@@ -78,6 +90,7 @@
       <w>werden</w>
       <w>wird</w>
       <w>wurde</w>
+      <w>zufällig</w>
       <w>zugefügten</w>
       <w>zugriff</w>
       <w>zurück</w>

@@ -24,10 +24,6 @@
             android:configChanges="orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".PictureSelector_Hardcore"
-            android:configChanges="orientation"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape">
@@ -37,7 +33,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameScreen"
+        <activity
+            android:name=".GameScreen"
             android:configChanges="orientation"
             android:screenOrientation="landscape" />
     </application>

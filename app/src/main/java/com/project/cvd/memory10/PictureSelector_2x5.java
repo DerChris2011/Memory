@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.project.cvd.memory10.Interfaces.ILogicHelper;
 import com.project.cvd.memory10.Logic.LogicHelper;
 
 import java.io.IOException;
@@ -36,11 +37,19 @@ public class PictureSelector_2x5 extends AppCompatActivity {
     private List<Bitmap> pictureList = new ArrayList<>();
     private List<Uri> checkList = new ArrayList<>();
 
+    //Zwischenspeichern vom Sound Boolean
+    private boolean sound;
+
+    //InterfaceLogicHelper
+    ILogicHelper _logicInterface = new LogicHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_selector_2x5);
+
+        //Mitgeschickte Einstellung für den Sound abholen.
+        sound = getIntent().getExtras().getBoolean("sound");
 
         img_1=findViewById(R.id.imgView1);
         img_2=findViewById(R.id.imgView2);
@@ -149,9 +158,9 @@ public class PictureSelector_2x5 extends AppCompatActivity {
 
     public void StartGame(View view) {
         Intent start = new Intent(this, GameScreen.class);
+        start.putExtra("Sound", sound);
         startActivity(start);
 
-        LogicHelper.bitmapList=new ArrayList<>();
-        LogicHelper.bitmapList = pictureList;
+        _logicInterface.SetList(pictureList);
     }
 }

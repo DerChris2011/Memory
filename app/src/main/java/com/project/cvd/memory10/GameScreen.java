@@ -2,13 +2,19 @@ package com.project.cvd.memory10;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Handler;
+import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.project.cvd.memory10.Interfaces.ILogicHelper;
 import com.project.cvd.memory10.Logic.LogicHelper;
 import com.project.cvd.memory10.Logic.PlaySound;
 import com.project.cvd.memory10.Models.MemoryButton;
@@ -20,6 +26,7 @@ import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Timer;
 
 public class GameScreen extends AppCompatActivity implements View.OnClickListener, AnimationListener {
 
@@ -27,6 +34,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
     private MemoryButton selectedButton2;
 
     private List<MemoryButton> memoryButtonList = new ArrayList<>();
+    private List<Bitmap> bitmapList = new ArrayList<>();
 
     private int matchingAll = 0;
 
@@ -36,11 +44,29 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
     private Animation animation2;
     private boolean animationRunning = false;
     private MemoryButton actualAnimation = null;
+    private boolean sound;
+
+    //InterfaceLogicHelper
+    ILogicHelper _logicInterface = new LogicHelper();
+
+    //Alles für den Timer
+    private long startTime = 0L;
+    private Handler timerHandler = new Handler();
+    long timeInMillis = 0L;
+    long timeSwap = 0L;
+    long updatedTime = 0L;
+    private TextView timer;
+    private String timeAsString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
+
+        sound = getIntent().getExtras().getBoolean("Sound");
+
+        bitmapList = _logicInterface.GetList();
 
         animation1 = AnimationUtils.loadAnimation(this, R.anim.to_middle);
         animation1.setAnimationListener(this);
@@ -54,21 +80,24 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         //TableLayout zuweisen
         gameLayout = findViewById(R.id.GameGrid);
 
-        if (LogicHelper.bitmapList == null) {
+        if (bitmapList == null) {
             Toast.makeText(this, "Liste leer", Toast.LENGTH_SHORT).show();
         }
 
         //Abfrage um welche Anzahl von Karten es sich handelt.
-        if (LogicHelper.bitmapList.size() == 4) {
+        if (bitmapList.size() == 4) {
             numColumns = 4;
             numRows = 2;
-        } else if (LogicHelper.bitmapList.size() == 5) {
+        } else if (bitmapList.size() == 5) {
             numColumns = 5;
             numRows = 2;
-        } else if (LogicHelper.bitmapList.size() == 6) {
+        } else if (bitmapList.size() == 6) {
             numColumns = 4;
             numRows = 3;
         }
+
+        //Zuweisen des timers
+        timer = findViewById(R.id.timer);
 
         //Setzen des GameLayouts
         gameLayout.setColumnCount(numColumns);
@@ -77,18 +106,21 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         //Methodenaufruf um die Karten zuzuorden.
         ShuffelButtonGraphics();
 
+        startTime = SystemClock.uptimeMillis();
+        timerHandler.postDelayed(TimerThread, 0);
     }
 
+    //Methode um die Karten zufällig zu verteilen.
     private void ShuffelButtonGraphics() {
 
         int trigger = -1;
-        for (int i = 0; i < LogicHelper.bitmapList.size(); i++) {
+        for (int i = 0; i < bitmapList.size(); i++) {
             trigger++;
-            memoryButtonList.add(CreateButtonView(LogicHelper.bitmapList.get(i), trigger, i));
+            memoryButtonList.add(CreateButtonView(bitmapList.get(i), trigger, i));
         }
-        for (int i = 0; i < LogicHelper.bitmapList.size(); i++) {
+        for (int i = 0; i < bitmapList.size(); i++) {
             trigger++;
-            memoryButtonList.add(CreateButtonView(LogicHelper.bitmapList.get(i), trigger, i));
+            memoryButtonList.add(CreateButtonView(bitmapList.get(i), trigger, i));
         }
 
         //Shuffeln der ButtonList
@@ -99,6 +131,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         }
     }
 
+    //Erzeugen der MemoryButtons
     private MemoryButton CreateButtonView(Bitmap bitmap, int _triggerId, int _pictureId) {
         MemoryButton btn = new MemoryButton(this, bitmap, _triggerId, _pictureId);
         btn.setOnClickListener(this);
@@ -106,13 +139,13 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         GridLayout.LayoutParams tempParams = new GridLayout.LayoutParams();
 
         // Abfrage der Spielart um dann die entsprechende Größe für die Buttons zu erhalten.
-        if (LogicHelper.bitmapList.size() == 4) {
+        if (bitmapList.size() == 4) {
             tempParams.width = (int) getResources().getDisplayMetrics().density * 140;
             tempParams.height = (int) getResources().getDisplayMetrics().density * 140;
-        } else if (LogicHelper.bitmapList.size() == 5) {
+        } else if (bitmapList.size() == 5) {
             tempParams.width = (int) getResources().getDisplayMetrics().density * 110;
             tempParams.height = (int) getResources().getDisplayMetrics().density * 110;
-        } else if (LogicHelper.bitmapList.size() == 6) {
+        } else if (bitmapList.size() == 6) {
             tempParams.width = (int) getResources().getDisplayMetrics().density * 100;
             tempParams.height = (int) getResources().getDisplayMetrics().density * 100;
         }
@@ -129,10 +162,14 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
         return btn;
     }
 
+    //OnClick Event für die MemoryButtons.
     public void onClick(View view) {
         MemoryButton m = (MemoryButton) view;
 
-        PlaySound.PlayClick(this);
+        if(sound)
+        {
+            PlaySound.PlayClick(this);
+        }
 
         //Wenn selectedButton1 noch null ist.
         if (selectedButton1 == null) {
@@ -169,7 +206,10 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
                         selectedButton2 = null;
                         matchingAll++;
                     } else {
-                        PlaySound.PlayFail(GameScreen.this);
+                        if(sound)
+                        {
+                            PlaySound.PlayFail(GameScreen.this);
+                        }
                         selectedButton1.setMatched(false);
                         selectedButton2.setMatched(false);
                         selectedButton1.Flip();
@@ -178,14 +218,62 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
                         selectedButton2 = null;
                     }
 
-                    if (matchingAll == LogicHelper.bitmapList.size()) {
-                        Intent i = new Intent(GameScreen.this, MainActivity.class);
-                        startActivity(i);
+                    if (matchingAll == LogicHelper.bitmapList.size())
+                    {
+                        timerHandler.removeCallbacks(TimerThread);
+                        CustomDialog();
                     }
                 }
             }, 1000);
         }
     }
+
+    private void CustomDialog(){
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View nextDialogView = factory.inflate(R.layout.custom_dialog, null);
+        final AlertDialog nextDialog = new AlertDialog.Builder(this).create();
+        nextDialog.setView(nextDialogView);
+
+        TextView dialogText = nextDialogView.findViewById(R.id.txt_time);
+        dialogText.setText(getResources().getString(R.string.your_time) + " " + timeAsString);
+        nextDialogView.setBackgroundColor(Color.TRANSPARENT);
+        nextDialogView.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(GameScreen.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                nextDialog.dismiss();
+            }
+        });
+
+        nextDialog.show();
+    }
+
+    private Runnable TimerThread = new Runnable() {
+
+        public void run() {
+
+            timeInMillis = SystemClock.uptimeMillis() - startTime;
+
+            updatedTime = timeSwap + timeInMillis;
+
+            int secs = (int) (updatedTime / 1000);
+            int mins = secs / 60;
+            secs = secs % 60;
+            int milliseconds = (int) (updatedTime % 1000);
+            timer.setText("" + mins + ":"
+                    + String.format("%02d", secs) + ":"
+                    + String.format("%03d", milliseconds));
+
+            timeAsString="" + mins + ":"
+                    + String.format("%02d", secs) + ":"
+                    + String.format("%03d", milliseconds);
+
+            timerHandler.postDelayed(this, 0);
+        }
+
+    };
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

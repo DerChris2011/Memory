@@ -2,6 +2,8 @@ package com.project.cvd.memory10.Logic;
 
 import android.graphics.Bitmap;
 
+import com.project.cvd.memory10.Interfaces.ILogicHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +12,19 @@ import java.util.List;
  */
 
 //Helper Klasse zum übergeben und zwischenspeichern der Daten
-public class LogicHelper {
+public class LogicHelper implements ILogicHelper {
 
     //Globale Liste mit ausgewählten Bitmaps, Zugriff von jeder View möglich.
-    public static List<Bitmap> bitmapList = new ArrayList<>();
+    public static List<Bitmap> bitmapList;
 
-    public static boolean Sound = false;
+    public List<Bitmap> GetList()
+    {
+        return bitmapList;
+    }
+
+    public void SetList(List<Bitmap> _bitmapList)
+    {
+        this.bitmapList = new ArrayList<>();
+        this.bitmapList = _bitmapList;
+    }
 }

@@ -13,19 +13,13 @@ public class PlaySound{
 
     public static void PlayClick(Context context)
     {
-        if(LogicHelper.Sound)
-        {
-            MediaPlayer mp = MediaPlayer.create(context, R.raw.sound_button);
-            mp.start();
-        }
+        MediaPlayer mp = MediaPlayer.create(context, R.raw.sound_button);
+        mp.start();
     }
 
     public static void PlayFail(Context context)
     {
-        if(LogicHelper.Sound)
-        {
-            MediaPlayer mp = MediaPlayer.create(context, R.raw.fail);
-            mp.start();
-        }
+        MediaPlayer mp = MediaPlayer.create(context, R.raw.fail);
+        mp.start();
     }
 }
