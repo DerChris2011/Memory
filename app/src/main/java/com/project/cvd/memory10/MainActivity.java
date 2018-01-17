@@ -47,8 +47,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i3);
     }
 
+    public void Close(View view)
+    {
+        this.finish();
+    }
+
     public void ChangeSound(View view)
     {
         this.sound = cb_sound.isChecked();
     }
+
+
+
 }

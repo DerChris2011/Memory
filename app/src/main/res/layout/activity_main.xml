@@ -89,8 +89,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn"
-                android:onClick="Start_Hardcore"
-                android:text="@string/Hardcore"
+                android:onClick="Close"
+                android:text="@string/close"
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp" />
 
