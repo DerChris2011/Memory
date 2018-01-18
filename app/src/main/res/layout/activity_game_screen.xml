@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context="com.project.cvd.memory10.GameScreen">
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/background"
         android:orientation="vertical">
 
         <TextView
@@ -18,7 +11,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="00:00:00"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -26,11 +18,7 @@
             android:id="@+id/GameGrid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            app:layout_constraintBaseline_toBaselineOf="parent"
-            app:layout_constraintStart_toEndOf="parent">
+            android:layout_margin="15dp">
 
         </GridLayout>
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
