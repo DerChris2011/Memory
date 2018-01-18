@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,6 +19,10 @@ import com.project.cvd.memory10.Logic.LogicHelper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Created by Christoph Fandrich on 12.01.2018.
+ */
 
 public class PictureSelector_3x4 extends AppCompatActivity {
 
@@ -47,6 +52,8 @@ public class PictureSelector_3x4 extends AppCompatActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_picture_selector_3x4);
 
         //Mitgeschickte Einstellung für den Sound abholen.

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,10 @@ import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Timer;
+
+/**
+ * Created by Christoph Fandrich on 12.01.2018.
+ */
 
 public class GameScreen extends AppCompatActivity implements View.OnClickListener, AnimationListener {
 
@@ -62,6 +66,8 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game_screen);
 
         sound = getIntent().getExtras().getBoolean("Sound");
@@ -82,6 +88,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
 
         if (bitmapList == null) {
             Toast.makeText(this, "Liste leer", Toast.LENGTH_SHORT).show();
+            this.onBackPressed();
         }
 
         //Abfrage um welche Anzahl von Karten es sich handelt.
@@ -199,13 +206,16 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
                 @Override
                 public void run() {
                     //Abfrage ob Karte 1 und Karte 2 gleich sind.
-                    if (selectedButton1.getPictureId() == selectedButton2.getPictureId()) {
+                    if (selectedButton1.getPictureId() == selectedButton2.getPictureId())
+                    {
                         selectedButton1.setVisibility(View.INVISIBLE);
                         selectedButton2.setVisibility(View.INVISIBLE);
                         selectedButton1 = null;
                         selectedButton2 = null;
                         matchingAll++;
-                    } else {
+                    }
+                    else
+                    {
                         if(sound)
                         {
                             PlaySound.PlayFail(GameScreen.this);
@@ -218,7 +228,7 @@ public class GameScreen extends AppCompatActivity implements View.OnClickListene
                         selectedButton2 = null;
                     }
 
-                    if (matchingAll == LogicHelper.bitmapList.size())
+                    if (matchingAll == bitmapList.size())
                     {
                         timerHandler.removeCallbacks(TimerThread);
                         CustomDialog();

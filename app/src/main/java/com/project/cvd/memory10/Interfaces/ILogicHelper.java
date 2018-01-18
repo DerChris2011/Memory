@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import java.util.List;
 
 /**
- * Created by Dominic Neuhaus on 16.01.2018.
+ * Created by Jennifer-Samantha Gad on 15.01.2018.
  */
 
 public interface ILogicHelper {

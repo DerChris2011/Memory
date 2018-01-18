@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Heero on 12.01.2018.
+ * Created by Dominic Neuhaus on 15.01.2018.
  */
 
 //Helper Klasse zum übergeben und zwischenspeichern der Daten
