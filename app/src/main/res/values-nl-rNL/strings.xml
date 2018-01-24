@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memory 1.0</string>
+    <string name="sound_bool">Geluid aan / uit</string>
+    <string name="start_game_4x4">Begin</string>
+    <string name="Easy">Makkelijk</string>
+    <string name="Medium">Normaal</string>
+    <string name="Hard">Moeilijk</string>
+    <string name="StartGame">Start het spel</string>
+    <string name="try_again">Probeer het opnieuw</string>
+    <string name="already_selected_picture">De afbeelding is al geselecteerd, kies een andere.</string>
+    <string name="next">Meer</string>
+    <string name="your_time">Jouw tijd</string>
+    <string name="close">Afrit</string>
+</resources>

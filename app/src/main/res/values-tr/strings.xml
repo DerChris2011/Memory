@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memory 1.0</string>
+    <string name="sound_bool">"ses "</string>
+    <string name="start_game_4x4">başlat 4x4</string>
+    <string name="Easy">kolay</string>
+    <string name="Medium">normal</string>
+    <string name="Hard">zor</string>
+    <string name="close">çıkış</string>
+    <string name="your_time">süre</string>
+    <string name="next">devam</string>
+    <string name="already_selected_picture">resim daha önce seçilmişti, lütfen başka birini seçin</string>
+    <string name="try_again">" lütfen tekrar deneyin"</string>
+    <string name="StartGame">Oyunu başlat</string>
+</resources>

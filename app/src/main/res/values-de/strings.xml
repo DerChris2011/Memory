@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memory 1.0</string>
+    <string name="sound_bool">Sound an/aus</string>
+    <string name="start_game_4x4">Start 4x4</string>
+    <string name="Easy">Leicht</string>
+    <string name="Medium">Normal</string>
+    <string name="Hard">Schwer</string>
+    <string name="Hardcore">Hardcore</string>
+    <string name="StartGame">Spiel starten</string>
+    <string name="close">Beenden</string>
+    <string name="your_time">"Deine Zeit: "</string>
+    <string name="next">Weiter</string>
+    <string name="try_again">Bitte nochmal versuchen.</string>
+    <string name="already_selected_picture">Das Bild wurde vorher schon ausgewählt, bitte wählen Sie ein anderes.</string>
+    <string name="music_bool">Musik an/aus</string>
+</resources>
